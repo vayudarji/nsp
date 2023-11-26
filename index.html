@@ -24,27 +24,27 @@
             <div class="sidebar-content">
                 <ul class="lists">
                     <li class="list">
-                        <a href="#" class="nav-link" >
+                        <a href="#" class="nav-link" onclick="changeDash('overlayy')" >
                             <i class='bx bx-home-alt icon'></i>
                             <span class="link">Dashboard</span>
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#" class="nav-link" onclick="changeRegistration('registration')">
+                        <a href="#" class="nav-link" onclick="changeRegistration('overlayy')">
                             <i class='bx bx-home-alt icon'></i>
-                            <span class="link">Registration</span>
+                            <span class="link">Profile</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link" onclick="changeBook('overlayy')">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="link">Book hostel</span>
                         </a>
                     </li>
                     <li class="list">
                         <a href="#" class="nav-link">
                             <i class='bx bx-home-alt icon'></i>
-                            <span class="link">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="list">
-                        <a href="#" class="nav-link">
-                            <i class='bx bx-home-alt icon'></i>
-                            <span class="link">Dashboard</span>
+                            <span class="link">Room Details</span>
                         </a>
                     </li>
                 </ul>
@@ -60,11 +60,17 @@
             </div>
         </div>
     </nav>
-    <section class="overlay">
+    <section class="overlay" id="overlayy">
         <div class="logout" id="logout">
             
         </div>
         <div class="registration" id="registration">
+
+        </div>
+        <div class="book" id="book">
+
+        </div>
+        <div class="dashboard" id="dashboard">
 
         </div>
 
@@ -80,14 +86,46 @@
             //     });
             // });
         function changeRegistration(contentType) {
-            var regDiv = document.getElementById('registration');
+            var regDiv = document.getElementById('overlayy');
 
             regDiv.innerHTML = '';
-            if (regDiv === registration) {
+            if (regDiv === overlayy) {
                 fetch('registration.html')
                     .then(response => response.text())
                     .then(data =>{
                         regDiv.innerHTML = data;
+                    })
+                    .catch(error => console.error('error loding content'));
+            }
+            else{
+
+            }
+        }
+        function changeBook(contentType) {
+            var bookDiv = document.getElementById('overlayy');
+
+            bookDiv.innerHTML = '';
+            if (bookDiv === overlayy) {
+                fetch('book-hostal.html')
+                    .then(response => response.text())
+                    .then(data =>{
+                        bookDiv.innerHTML = data;
+                    })
+                    .catch(error => console.error('error loding content'));
+            }
+            else{
+
+            }
+        }
+        function changeDash(contentType) {
+            var dashDiv = document.getElementById('overlayy');
+
+            dashDiv.innerHTML = '';
+            if (dashDiv === overlayy) {
+                fetch('dashboard.html')
+                    .then(response => response.text())
+                    .then(data =>{
+                        dashDiv.innerHTML = data;
                     })
                     .catch(error => console.error('error loding content'));
             }

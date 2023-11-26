@@ -87,7 +87,7 @@ nav .sidebar{
     color: #19234d;
 }
 .overlay{
-    position: fixed;
+    position: absolute;
     height: 100vh;
     width: 100%;
     top: 0;
