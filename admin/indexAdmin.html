@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="indexAdmin.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <!-- <i class='bx bx-menu-alt-left menu-icon'></i> -->
+            <span class="logo-name">Hostel</span>
+        </div>
+
+        <div class="sidebar">
+            <div class="logo">
+                <!-- <i class='bx bx-menu-alt-left menu-icon'></i> -->
+                <span class="logo-name">Admin</span>
+               
+            </div>
+
+            <div class="sidebar-content">
+                <ul class="lists">
+                    <li class="list">
+                        <a href="#" class="nav-link" onclick="changeDash('overlayy')" >
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="link">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link" onclick="changeManage('overlayy')">
+                            <i class='bx bx-user icon'></i>
+                            <span class="link">Manage Room</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link" onclick="changeAddRoom('overlayy')">
+                            <i class='bx bxs-bookmarks icon'></i>
+                            <span class="link">Add Room</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link" onclick="changeStuDetail('overlayy')">
+                            <i class='bx bx-detail icon'></i>
+                            <span class="link">Students Detail</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="bottom-content">
+                    <li class="list">
+                        <a href="#" class="nav-link" onclick="javascript:location.href='../logout.html'">
+                            
+                            <i class='bx bx-log-out icon' ></i>
+                            <span class="link">Logout</span>
+                        </a> 
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="overlay" id="overlayy" >
+        
+
+    </section>
+    <script>
+        const navBar = document.querySelector("nav"),
+            menuBtns = document.querySelectorAll(".menu-icon"),
+            overlay = document.querySelector(".overlay");
+
+            // menuBtns.forEach(menuBtns =>{
+            //     menuBtns.addEventListener("click",()=>{
+            //         navBar.classList.toggle("open");
+            //     });
+            // });
+        function changeAddRoom(contentType) {
+            var AddDiv = document.getElementById('overlayy');
+
+            AddDiv.innerHTML = '';
+            if (AddDiv === overlayy) {
+                fetch('addRoom.html')
+                    .then(response => response.text())
+                    .then(data =>{
+                        AddDiv.innerHTML = data;
+                    })
+                    .catch(error => console.error('error loding content'));
+            }
+            else{
+
+            }
+        }
+        function changeStuDetail(contentType) {
+            var StudentDiv = document.getElementById('overlayy');
+
+            StudentDiv.innerHTML = '';
+            if (StudentDiv === overlayy) {
+                fetch('studentDetail.html')
+                    .then(response => response.text())
+                    .then(data =>{
+                        StudentDiv.innerHTML = data;
+                    })
+                    .catch(error => console.error('error loding content'));
+            }
+            else{
+
+            }
+        }
+        function changeDash(contentType) {
+            var dashDiv = document.getElementById('overlayy');
+
+            dashDiv.innerHTML = '';
+            if (dashDiv === overlayy) {
+                fetch('dashboard.html')
+                    .then(response => response.text())
+                    .then(data =>{
+                        dashDiv.innerHTML = data;
+                    })
+                    .catch(error => console.error('error loding content'));
+            }
+            else{
+
+            }
+        }
+        function changeManage(contentType) {
+            var ManageDiv = document.getElementById('overlayy');
+
+            ManageDiv.innerHTML = '';
+            if (ManageDiv === overlayy) {
+                fetch('manageRoom.html')
+                    .then(response => response.text())
+                    .then(data =>{
+                        ManageDiv.innerHTML = data;
+                    })
+                    .catch(error => console.error('error loding content'));
+            }
+            else{
+
+            }
+        }
+    </script>
+</body>
+</html>

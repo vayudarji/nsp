@@ -10,13 +10,16 @@
     
 <div class="container" id="container">
 	<div class="form-container sign-in-container">
-		<form action="#">
+		<form >
 			<h1>Sign in</h1>
             <br>
 			<input type="email" placeholder="Email" />
 			<input type="password" placeholder="Password" />
 			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
+			<button  onclick="javascript:location.href='index.html'">Sign In</button>
+			<button id="signIn" onclick="javascript:location.href='admin/indexAdmin.html'">ff</button>
+			<button id="signUp" onclick="javascript:location.href='admin/indexAdmin.html'">Sign Up</button>
+			
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -28,6 +31,8 @@
 				<h1>Hello, Friend!</h1>
 				<p>Enter your personal details and start journey with us</p>
 				<button class="ghost" id="signUp" onclick="javascript:location.href='index.html'">Sign Up</button>
+				<button class="ghost" id="signUp" onclick="javascript:location.href='admin/indexAdmin.html'">Sign Up</button>
+
 			</div>
 		</div>
 	</div>
@@ -35,4 +40,10 @@
 
 
 </body>
+<script>
+	function show(){
+		
+		location.href='index.html';
+	}
+</script>
 </html>
