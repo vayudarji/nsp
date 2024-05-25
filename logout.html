@@ -7,7 +7,34 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    
+	<nav>
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <ul class="lists">
+                    <li class="list" onclick="showForm()">
+                        <a href="#" class="nav-link" onclick="changeDash('overlayy')" >
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="link">User Login</span>
+                        </a>
+                    </li>
+                    <li class="list" onclick="showForm()">
+                        <a href="#" class="nav-link" onclick="changeRegistration('overlayy')">
+                            <i class='bx bx-user icon'></i>
+                            <span class="link">User Register</span>
+                        </a>
+                    </li>
+                    <li class="list" onclick="showForm()">
+                        <a href="#" class="nav-link" onclick="changeBook('overlayy')">
+                            <i class='bx bxs-bookmarks icon'></i>
+                            <span class="link">Admin Login</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
 <div class="container" id="container">
 	<div class="form-container sign-in-container">
 		<form action="admin/indexAdmin.html">
@@ -15,19 +42,13 @@
             <br>
 			<input type="email" placeholder="Email" />
 			<input type="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
 			<button  onclick="javascript:location.href='index.html'">Admin</button>			
 		</form>
 	</div>
 	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<button class="ghost" id="signIn" onclick="javascript:location.href='index.html'">Sign In</button>
-			</div>
+		<div class="overlayyyy">
 			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details</p>
-				<button class="ghost" id="signUp" onclick="javascript:location.href='index.html'">User</button>
+				<h1>Welcome</h1>
 			</div>
 		</div>
 	</div>
@@ -36,9 +57,8 @@
 
 </body>
 <script>
-	function show(){
+	function showForm(){
 		
-		location.href='index.html';
 	}
 </script>
 </html>
