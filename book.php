@@ -4,16 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/registration.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
+
 </head>
 <body>
-    <div class="ts-main-content">
+    <nav>
+        <div class="logo">
+            <!-- <i class='bx bx-menu-alt-left menu-icon'></i> -->
+            <span class="logo-name">Hostel</span>
+        </div>
+
+        <div class="sidebar">
+            <div class="logo">
+                <!-- <i class='bx bx-menu-alt-left menu-icon'></i> -->
+                <span class="logo-name">Hostel Managment</span>
+               
+            </div>
+
+            <div class="sidebar-content">
+                <ul class="lists">
+                    <li class="list">
+                        <a href="#" class="nav-link" onclick="javascript:location.href='dash.php'" >
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="link">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link" onclick="javascript:location.href='index.php'">
+                            <i class='bx bx-user icon'></i>
+                            <span class="link">Profile</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link">
+                            <i class='bx bxs-bookmarks icon'></i>
+                            <span class="link">Book hostel</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#" class="nav-link" onclick="javascript:location.href='roomDetails.php'">
+                            <i class='bx bx-detail icon'></i>
+                            <span class="link">Room Details</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="bottom-content">
+                    <li class="list">
+                        <a href="signout.php" class="nav-link">
+                            
+                            <i class='bx bx-log-out icon' ></i>
+                            <span class="link">Logout</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="overlay" id="overlayy" >
+
+        
+        <div class="book in" id="book">
+        <div class="ts-main-content">
         <div class="content-wrapper">
             <div class="content-fluid">
                 <div class="row containerr">
@@ -223,5 +281,9 @@
             </div>
         </div>
     </div>
+        </div>
+        
+
+    </section>
 </body>
 </html>
