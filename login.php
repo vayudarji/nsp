@@ -1,3 +1,25 @@
+<?php
+    require 'config.php';
+    if(isset($_POST["submit"])){
+        $useremail = $_POST["useremail"];
+        $userpass = $_POST["userpass"];
+        $result = mysqli_query($conn,"SELECT * FROM user_log where user_email = '$useremail'") or die(mysqli_error($con));
+        $row = mysqli_fetch_array($result);
+        if(mysqli_num_rows($result) > 0){
+            if($userpass == $row["user_pass"]){
+                $_SESSION["login"] = true;
+                $_SESSION["id"] = $row["id"];
+                header("Location: index.php");
+            }
+            else{
+                echo"<script> alert('Worng Password'); </script>";
+            }
+        }
+        else{
+            echo"<script> alert('User Not Registered'); </script>";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +40,7 @@
                         </a>
                     </li>
                     <li class="list" >
-                        <a href="#" class="nav-link" onclick="">
+                        <a href="#" class="nav-link" onclick="javascipt:location.href='logout.php' ">
                             <i class='bx bx-user icon'></i>
                             <span class="link">User Register</span>
                         </a>
@@ -37,12 +59,12 @@
     <h1>hello</h1>
 	<div class="container" id="user-login">
 		<div class="form-container sign-in-container">
-			<form id="ok">
+			<form action="" method="post">
 				<h1>User Sign in</h1>
             	<br>
-				<input type="email" placeholder="Email" />
-				<input type="password" placeholder="Password" />
-				<button  type="button">Adminnn</button>			
+				<input type="email" placeholder="Email" id="useremail" name="useremail" required value=""/>
+				<input type="password" placeholder="Password" id="userpass" name="userpass" required value=""/>
+				<button  type="submit" name="submit">Login</button>			
 			</form>
 		</div>
 		<div class="overlay-container">

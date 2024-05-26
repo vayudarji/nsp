@@ -51,7 +51,7 @@
                 </ul>
                 <div class="bottom-content">
                     <li class="list">
-                        <a href="#" class="nav-link" onclick="javascript:location.href='logout.php'">
+                        <a href="signout.php" class="nav-link">
                             
                             <i class='bx bx-log-out icon' ></i>
                             <span class="link">Logout</span>

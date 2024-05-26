@@ -1,26 +1,3 @@
-<?php
-	require 'config.php';
-
-	if (isset($_POST["submit"])) {
-		echo"heloooooooooooooooooooooooooo";
-		$user_email = $_POST["reg_email"];
-		$user_pass = $_POST["reg_pass"];
-		echo"$user_pass";
-		$duplicate = mysqli_query($conn,"SELECT * from user_log where user_email = '$user_email' ");
-		if (mysqli_num_rows($duplicate)>0) {
-			echo "<script>	alert('Email already taken'); </script>";
-		}
-		else {
-			$query = "INSERT INTO user_log VALUES('','$user_email','$user_pass')";
-			mysqli_query($conn, $query);
-			echo "<script>	alert('Registration Done'); </script>";
-		}
-	}
-	else{
-		echo "helooooo";
-	}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,13 +12,13 @@
             <div class="sidebar-content">
                 <ul class="lists">
                     <li class="list" >
-                        <a href="#" class="nav-link"  onclick="javascipt:location.href='login.php' ">
+                        <a href="#" class="nav-link">
                             <i class='bx bx-home-alt icon'></i>
                             <span class="link">User Login</span>
                         </a>
                     </li>
                     <li class="list" >
-                        <a href="#" class="nav-link" >
+                        <a href="#" class="nav-link" onclick="">
                             <i class='bx bx-user icon'></i>
                             <span class="link">User Register</span>
                         </a>
@@ -57,27 +34,26 @@
             </div>
         </div>
     </nav>
-<div>
-	<div class="container" id="user-register">
+    <h1>hello</h1>
+	<div class="container" id="user-login">
 		<div class="form-container sign-in-container">
-			<form action="" method="post">
-				<h1>User Register</h1>
+			<form id="ok">
+				<h1>Admin Sign in</h1>
             	<br>
-				<input type="email" placeholder="Email" id="reg_email" name="reg_email" required value=""/>
-				<input type="password" placeholder="Password" id="reg_pass" name="reg_pass" required value=""/>
-				<button type="submit" name="submit">Register</button>			
+				<input type="email" placeholder="Email" />
+				<input type="password" placeholder="Password" />
+				<button  type="button">Adminnn</button>			
 			</form>
 		</div>
 		<div class="overlay-container">
 			<div class="overlayyyy">
 				<div class="overlay-panel overlay-right">
-					<h1>Welcome</h1>
+					<h1>Welcome Admin</h1>
 				</div>
 			</div>
 		</div>
 	</div>
 
-</div>
 
 </body>
 
