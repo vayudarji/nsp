@@ -51,7 +51,7 @@
                 </ul>
                 <div class="bottom-content">
                     <li class="list">
-                        <a href="#" class="nav-link" onclick="javascript:location.href='logout.html'">
+                        <a href="#" class="nav-link" onclick="javascript:location.href='logout.php'">
                             
                             <i class='bx bx-log-out icon' ></i>
                             <span class="link">Logout</span>
@@ -92,7 +92,7 @@
 
             regDiv.innerHTML = '';
             if (regDiv === overlayy) {
-                fetch('registration.html')
+                fetch('registration.php')
                     .then(response => response.text())
                     .then(data =>{
                         regDiv.innerHTML = data;
@@ -108,7 +108,7 @@
 
             bookDiv.innerHTML = '';
             if (bookDiv === overlayy) {
-                fetch('book-hostal.html')
+                fetch('book-hostal.php')
                     .then(response => response.text())
                     .then(data =>{
                         bookDiv.innerHTML = data;
@@ -124,7 +124,7 @@
 
             dashDiv.innerHTML = '';
             if (dashDiv === overlayy) {
-                fetch('dashboard.html')
+                fetch('dashboard.php')
                     .then(response => response.text())
                     .then(data =>{
                         dashDiv.innerHTML = data;
@@ -140,7 +140,7 @@
 
             detailDiv.innerHTML = '';
             if (detailDiv === overlayy) {
-                fetch('roomDetail.html')
+                fetch('roomDetail.php')
                     .then(response => response.text())
                     .then(data =>{
                         detailDiv.innerHTML = data;
