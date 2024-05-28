@@ -91,7 +91,7 @@
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Seater</label>
                                                 <div class="col-sm-9">
-                                                    <select name="room" id="room" class="form-control">
+                                                    <select name="room" id="room" class="form-control" required>
                                                         <option value="">Seater</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
@@ -99,16 +99,15 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            
+                                             
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Room NO. :</label>
                                                 <div class="col-sm-9">
-                                                    <select name="room" id="room" class="form-control">
+                                                    <select name="room_no" id="room_no" class="form-control" required>
                                                         <option value="">Select Room</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
-
                                                     </select>
                                                 </div>
                                             </div>
@@ -116,22 +115,22 @@
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Food Status :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="radio" value="0" name="foodstatus" checked="checked"> Without Food
-                                                    <input type="radio" value="1" name="foodstatus"> With Food(Rs 2000.00 Per Month Extra)
+                                                    <input type="radio" value="0" name="food_without" id="food_without" checked="checked" required> Without Food
+                                                    <input type="radio" value="1" name="food_with" id="food_with" required> With Food(Rs 2000.00 Per Month Extra)
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Stay From :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="date" class="form-control">
+                                                    <input type="date" name="date" id="date" class="form-control" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Duration :</label>
                                                 <div class="col-sm-9">
-                                                    <select name="duration" id="duration" class="form-control">
+                                                    <select name="duration" id="duration" class="form-control" required>
                                                         <option value="">Select Duration in Month</option>
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
@@ -150,13 +149,13 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-sm-2 control-label"><h4 align="left">Personal info </h4> </label>
+                                                <label class="col-sm-2 control-label"><h4 >Personal info </h4> </label>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Course :</label>
                                                 <div class="col-sm-9">
-                                                    <select name="course" id="course" class="form-control">
+                                                    <select name="course" id="course" class="form-control" required>
                                                         <option value="">Select Course</option>
                                                         <option value="1">B.Tech</option>
                                                         <option value="2">B.Com</option>
@@ -169,28 +168,28 @@
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Registration No. :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="registration" name="registration" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">First Name :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="first_name" name="first_name" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Last Name :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="last_name" name="last_name" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Gender : </label>
                                                 <div class="col-sm-9">
-                                                    <select name="gender" class="form-control" required="required">
+                                                    <select name="gender" class="form-control" required id="gender">
                                                         <option value="">Select Gender</option>
                                                         <option value="male">Male</option>
                                                         <option value="female">Female</option>
@@ -202,72 +201,72 @@
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Contact No :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" name="contact" id="contact" class="form-control">
+                                                    <input type="number" name="contact" id="contact" class="form-control" value="" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Email :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="email" name="email" id="email" class="form-control">
+                                                    <input type="email" name="email" id="email" class="form-control" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Emergency Contact :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="emergency" name="emergency" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Guardian Name:</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="guardian_name" name="guardian_name" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Gurdian Contact No. :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="guardian_no" name="guardian_no" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-sm-3 control-label"><h4 align="left">Parmanent Address </h4> </label>
+                                                <label class="col-sm-3 control-label"><h4 >Parmanent Address </h4> </label>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Address :</label>
                                                 <div class="col-sm-9">
-                                                    <Textarea class="form-control" ></Textarea>
+                                                    <Textarea class="form-control" id="address" name="address" required value=""></Textarea>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">City :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="city" name="city" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">State :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="state" name="state" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Pincode :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" class="form-control">
+                                                    <input type="number" class="form-control" id="pincode" name="pincode" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-6 col-sm-offset-2">
-                                                <input type="submit" name="submit" Value="Register" class="btn btn-primary">
+                                                <button type="submit" name="submit" id="submit" class="btn btn-primary">Register</button>
                                             </div>
 
 
