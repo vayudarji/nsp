@@ -82,10 +82,10 @@
                                 <div class="panel panel-primary" style="color: #19234d;">
                                     <div class="panel-heading">Fill all</div>
                                     <div class="panel-body">
-                                        <form action="" class="horizontal">
+                                        <form action="" class="horizontal" method="post">
 
                                             <div class="form-group">
-                                                <label class="col-sm-4 control-label"><h4 align="left">Room Related info </h4> </label>
+                                                <label class="col-sm-4 control-label"><h4 >Room Related info </h4> </label>
                                             </div>
 
                                             <div class="form-group">

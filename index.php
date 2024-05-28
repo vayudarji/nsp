@@ -1,3 +1,31 @@
+<?php
+    require 'config.php';
+    if (isset($_SESSION["id"])) {
+        echo"okk";
+    } 
+    else {
+        echo "not okkk";
+    }
+
+    if(isset($_POST['submit'])){
+        $session_id = $_SESSION['id'];
+        $reg = $_POST["registration"];
+        $first_name = $_POST["first_name"];
+        $last_name = $_POST["last_name"];
+        $gender = $_POST["gender"];
+        $contact = $_POST["contact"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+
+        $query = "INSERT into user_profile values('' , '$session_id' , '$reg' , '$first_name' , '$last_name' , '$gender' , '$contact' , '$email' , '$password')";
+        mysqli_query($conn, $query);
+        
+    }
+    else{
+        echo "Submit nhi hui";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +42,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
-<body>
+ <body>
     <nav>
         <div class="logo">
             <!-- <i class='bx bx-menu-alt-left menu-icon'></i> -->
@@ -80,34 +108,36 @@
                             <div class="col-md-11">
                                 <div class="panel panel-primary" style="color: #19234d;">
                                     <div class="panel-heading">Fill all</div>
+                        
                                     <div class="panel-body">
-                                        <form action="" class="horizontal">
+                                        <form action="" class="horizontal" method="post">
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Registration No. :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="registration" name="registration" required value="">
                                                 </div>
                                             </div>
+                                            
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">First Name :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="first_name" name="first_name" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Last Name :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" id="last_name" name="last_name" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="col-sm-2 control-label">Gender : </label>
                                                 <div class="col-sm-9">
-                                                    <select name="gender" class="form-control" required="required">
+                                                    <select name="gender" class="form-control" required="required" id="gender">
                                                         <option value="">Select Gender</option>
                                                         <option value="male">Male</option>
                                                         <option value="female">Female</option>
@@ -115,31 +145,31 @@
                                                     </select>
                                                 </div>
                                             </div>
-
+                                            
                                             <div class="form-group">
-                                                <label for="" class="col-sm-2 control-label">Contact No :</label>
+                                                <label for="" class="col-sm-2 control-label" >Contact No :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" name="contact" id="contact" class="form-control">
+                                                    <input type="number" name="contact" id="contact" class="form-control" required valur="">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Email :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="email" name="email" id="email" class="form-control">
+                                                    <input type="email" name="email" id="email" class="form-control" value="" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group last">
                                                 <label for="" class="col-sm-2 control-label">Password :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="password" name="password" id="password" class="form-control">
+                                                    <input type="password" name="password" id="password" class="form-control" required value="">
                                                 </div>
                                             </div>
 
                                             <div class="col-sm-6 col-sm-offset-2">
-                                                <button type="submit" name="submit">Register</button>
-                                                </div>
+                                                <button type="submit" name="submit" class="btn btn-primary">Register</button>
+                                            </div>
 
                                         </form>
                                     </div>

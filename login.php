@@ -7,8 +7,8 @@
         $row = mysqli_fetch_array($result);
         if(mysqli_num_rows($result) > 0){
             if($userpass == $row["user_pass"]){
-                $_SESSION["login"] = true;
-                $_SESSION["id"] = $row["id"];
+                $_SESSION['login'] = true;
+                $_SESSION['id'] = $row["user_id"];
                 header("Location: index.php");
             }
             else{
