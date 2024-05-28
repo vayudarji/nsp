@@ -1,3 +1,45 @@
+<?php
+    require 'config.php';
+    if (isset($_POST['submit'])) {
+
+        $room=$_POST["room"];
+        $room_no=$_POST["room_no"];
+        $food_without=$_POST["food_without"];
+        $date=$_POST["date"];
+        $duration=$_POST["duration"];
+        $course=$_POST["course"];
+        $registration=$_POST["registration"];
+        $first_name=$_POST["first_name"];
+        $last_name=$_POST["last_name"];
+        $gender=$_POST["gender"];
+        $contact=$_POST["contact"];
+        $email=$_POST["email"];
+        $emergency=$_POST["emergency"];
+        $guardianname=$_POST["guardian_name"];
+        $guardianno=$_POST["guardian_no"];
+        $address=$_POST["address"];
+        $city=$_POST["city"];
+        $state=$_POST["state"];
+        $pincode=$_POST["pincode"];
+        $session_id=$_SESSION['id'];
+
+        $duplicate = mysqli_query($conn,"SELECT * from user_book where sessionid = '$session_id' ");
+        if(mysqli_num_rows($duplicate)> 0){
+            echo "<script>	alert('User Already Registered'); </script>";
+        }
+        else{
+            $query="INSERT into user_book(id,seaterr,roomno,foodwithout,date,duration,course,registration,firstname,lastname,gender,contactno,email,emergency,guardianname,guardianno,address,city,state,pincode,sessionid) values('','$room','$room_no','$food_without','$date','$duration','$course','$registration','$first_name','$last_name','$gender','$contact','$email','$emergency','$guardianname','$guardianno','$address','$city','$state','$pincode','$session_id')";
+            mysqli_query($conn, $query) or die(mysqli_error($conn));
+            echo "<script>	alert('Registration Done'); </script>";
+        }
+
+
+    }
+    else{
+        echo"not okk";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,8 +157,7 @@
                                             <div class="form-group">
                                                 <label for="" class="col-sm-2 control-label">Food Status :</label>
                                                 <div class="col-sm-9">
-                                                    <input type="radio" value="0" name="food_without" id="food_without" checked="checked" required> Without Food
-                                                    <input type="radio" value="1" name="food_with" id="food_with" required> With Food(Rs 2000.00 Per Month Extra)
+                                                    <input type="radio" value="0" name="food_without" id="food_without"  > Without Food
                                                 </div>
                                             </div>
 

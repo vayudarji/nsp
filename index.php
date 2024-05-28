@@ -17,8 +17,14 @@
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        $query = "INSERT into user_profile values('' , '$session_id' , '$reg' , '$first_name' , '$last_name' , '$gender' , '$contact' , '$email' , '$password')";
-        mysqli_query($conn, $query);
+        $duplicate = mysqli_query($conn,"SELECT * from user_profile where session_id = '$session_id' ");
+        if(mysqli_num_rows($duplicate) > 0){
+            echo "<script>	alert('Profile Already Made'); </script>";
+        }
+        else{   
+            $query = "INSERT into user_profile values('' , '$session_id' , '$reg' , '$first_name' , '$last_name' , '$gender' , '$contact' , '$email' , '$password')";
+            mysqli_query($conn, $query);
+        }
         
     }
     else{

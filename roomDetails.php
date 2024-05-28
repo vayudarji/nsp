@@ -1,3 +1,12 @@
+<?php
+    require 'config.php';
+    $session_id=$_SESSION['id'];
+    $query="SELECT * from user_book where sessionid='$session_id'";
+    $result=mysqli_query($conn,$query);
+
+    if(mysqli_num_rows($result)> 0){
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,18 +94,23 @@
                                     <div class="panel-body">
                                         <table class="table table-bordered" cellspacing="0" width="100%">
                                             <tbody>
+                                                <?php   
+                                                while($row=mysqli_fetch_array($result)){
+                                                    ?>
+
+
                                                 <tr>
                                                     <td colspan="4"><h4>Room Related Info</h4></td>
                                                     <td colspan="2"><a href="#">Print</a></td>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="6"><b>Registration No. :</b>123-4556-789</td>
+                                                    <td colspan="6"><b>Registration No. :</b><?php echo $row['registration']; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td><b>Room No. :</b></td>
-                                                    <td>101</td>
+                                                    <td><?php echo $row['roomno']; ?></td>
                                                     <td><b>Seater</b></td>
-                                                    <td>2</td>
+                                                    <td><?php echo $row['seaterr']; ?></td>
                                                     <td><b>Fees PM</b></td>
                                                     <td>7000 rs</td>
                                                 </tr>
@@ -104,9 +118,9 @@
                                                     <td><b>Food Status</b></td>
                                                     <td>With Food</td>
                                                     <td><b>Stay From</b></td>
-                                                    <td>1-Dec-2023</td>
+                                                    <td><?php echo $row['date']; ?></td>
                                                     <td><b>Duration</b></td>
-                                                    <td>5 Months</td>
+                                                    <td><?php echo $row['duration']; ?> Months</td>
                                                 </tr>
                                                 <tr>
                                                     <td><b>Total Fees : </b> 84000 rs</td>
@@ -116,40 +130,41 @@
                                                 </tr>
                                                 <tr>
                                                     <td><b>Reg No.</b></td>
-                                                    <td>123-456</td>
+                                                    <td><?php echo $row['registration']; ?></td>
                                                     <td><b>Full Name</b></td>
-                                                    <td>Vayu Darji</td>
+                                                    <td><?php echo $row['firstname'] , $row['lastname']; ?></td>
                                                     <td><b>Email</b></td>
-                                                    <td>vayutailor@gmail.com</td>
+                                                    <td><?php echo $row['email']; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td><b>Contact No.</b></td>
-                                                    <td>7891663530</td>
+                                                    <td><?php echo $row['contactno']; ?></td>
                                                     <td><b>Gender</b></td>
-                                                    <td>Male</td>
+                                                    <td><?php echo $row['gender']; ?></td>
                                                     <td><b>Course</b></td>
-                                                    <td>B.Tech</td>
+                                                    <td><?php echo $row['course']; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td><b>Gurdian Name.</b></td>
-                                                    <td>Vayu</td>
+                                                    <td><?php echo $row['guardianname']; ?></td>
                                                     <td><b>Guadian No.</b></td>
-                                                    <td>1234567899</td>
+                                                    <td><?php echo $row['guardianno']; ?></td>
                                                     <td><b>Emergency No.</b></td>
-                                                    <td>9988778877</td>
+                                                    <td><?php echo $row['emergency']; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="6"><h4>Addresses</h4></td>
                                                 </tr>
                                                 <tr>
                                                     <td><b>Correspondense Address</b></td>
-                                                    <td colspan="2">Sitapura Industrial Area , Jaipur</td>
+                                                    <td colspan="2"><?php echo $row['address']; ?></td>
                                                     <td><b>Permanent Address</b></td>
-                                                    <td colspan="2">Sitapura Industrial Area , Jaipur</td>
+                                                    <td colspan="2"><?php echo $row['address']; ?></td>
                                                 </tr>
-
+                                                    <?php } ?>
                                             </tbody>
                                         </table>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
