@@ -46,7 +46,7 @@
                         </a>
                     </li>
                     <li class="list" >
-                        <a href="#" class="nav-link" onclick="">
+                        <a href="#" class="nav-link" onclick="javascipt:location.href='adminLogin.php' ">
                             <i class='bx bxs-bookmarks icon'></i>
                             <span class="link">Admin Login</span>
                         </a>

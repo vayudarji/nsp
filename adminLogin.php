@@ -1,3 +1,19 @@
+<?php
+
+    if(isset($_POST['submit'])){
+        $mail=$_POST['email'];
+        $pass=$_POST['password'];
+        if($mail == "admin@gmail.com" && $pass== "admin"){
+            header("Location: admin/indexAdmin.php");
+        }
+    else{
+        echo"<script>alert('Mail OR Password Not Correct'); </script>";
+
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,13 +28,13 @@
             <div class="sidebar-content">
                 <ul class="lists">
                     <li class="list" >
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link" onclick="javascipt:location.href='login.php'">
                             <i class='bx bx-home-alt icon'></i>
                             <span class="link">User Login</span>
                         </a>
                     </li>
                     <li class="list" >
-                        <a href="#" class="nav-link" onclick="">
+                        <a href="#" class="nav-link" onclick="javascipt:location.href='logout.php' ">
                             <i class='bx bx-user icon'></i>
                             <span class="link">User Register</span>
                         </a>
@@ -37,12 +53,12 @@
     <h1>hello</h1>
 	<div class="container" id="user-login">
 		<div class="form-container sign-in-container">
-			<form id="ok">
+			<form action="" method="post">
 				<h1>Admin Sign in</h1>
             	<br>
-				<input type="email" placeholder="Email" />
-				<input type="password" placeholder="Password" />
-				<button  type="button">Adminnn</button>			
+				<input type="email" placeholder="Email" id="email" name="email"/>
+				<input type="password" placeholder="Password" id="password" name="password"/>
+				<button  type="submit" name="submit">Adminnn</button>			
 			</form>
 		</div>
 		<div class="overlay-container">

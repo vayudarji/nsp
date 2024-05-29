@@ -14,6 +14,7 @@
 			$query = "INSERT INTO user_log VALUES('','$user_email','$user_pass')";
 			mysqli_query($conn, $query);
 			echo "<script>	alert('Registration Done'); </script>";
+			header("Location: login.php");
 		}
 	}
 	else{
@@ -47,7 +48,7 @@
                         </a>
                     </li>
                     <li class="list" >
-                        <a href="#" class="nav-link" onclick="">
+                        <a href="#" class="nav-link" onclick="javascipt:location.href='adminLogin.php'">
                             <i class='bx bxs-bookmarks icon'></i>
                             <span class="link">Admin Login</span>
                         </a>
