@@ -50,7 +50,7 @@
             </div>
         </div>
     </nav>
-    <h1>hello</h1>
+
 	<div class="container" id="user-login">
 		<div class="form-container sign-in-container">
 			<form action="" method="post">

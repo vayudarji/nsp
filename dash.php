@@ -92,7 +92,7 @@
 										<div class="panel panel-default">
 											<div class="panel-body bk-success">
 												<div class="stat-panel text-center">
-												<div class="stat-panel-number h1 ">My Rooooooooom</div>
+												<div class="stat-panel-number h1 ">My Room</div>
 												</div>
 											</div>
 											<a href="#" class="">See &nbsp; <i class='bx bx-arrow-back bx-rotate-180' style='color:#000000' ></i></a>

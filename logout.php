@@ -4,7 +4,6 @@
 	if (isset($_POST["submit"])) {
 		$user_email = $_POST["reg_email"];
 		$user_pass = $_POST["reg_pass"];
-		echo"$user_pass";
 		$duplicate = mysqli_query($conn,"SELECT * from user_log where user_email = '$user_email' ");
 		if (mysqli_num_rows($duplicate)>0) {
 			echo "<script>	alert('Email already taken'); </script>";
@@ -17,7 +16,7 @@
 		}
 	}
 	else{
-		echo "helooooo";
+		
 	}
 ?>
 
