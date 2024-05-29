@@ -30,25 +30,25 @@
             <div class="sidebar-content">
                 <ul class="lists">
                     <li class="list">
-                        <a href="#" class="nav-link" onclick="changeDash('overlayy')" >
+                        <a href="#" class="nav-link" >
                             <i class='bx bx-home-alt icon'></i>
                             <span class="link">Dashboard</span>
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#" class="nav-link" onclick="changeManage('overlayy')">
+                        <a href="#" class="nav-link" onclick="javascript:location.href='manageRoom.php'">
                             <i class='bx bx-user icon'></i>
                             <span class="link">Manage Room</span>
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#" class="nav-link" onclick="changeAddRoom('overlayy')">
+                        <a href="#" class="nav-link" onclick="javascript:location.href='addRoom.php'">
                             <i class='bx bxs-bookmarks icon'></i>
                             <span class="link">Add Room</span>
                         </a>
                     </li>
                     <li class="list">
-                        <a href="#" class="nav-link" onclick="changeStuDetail('overlayy')">
+                        <a href="#" class="nav-link" onclick="javascript:location.href='studentsDetails.php'">
                             <i class='bx bx-detail icon'></i>
                             <span class="link">Students Detail</span>
                         </a>
