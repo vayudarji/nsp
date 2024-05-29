@@ -1,3 +1,13 @@
+<?php
+
+    require '../config.php';
+    $query="SELECT * from user_book";
+    $result=mysqli_query($conn,$query);
+    if(mysqli_num_rows($result)>0){
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,19 +103,24 @@
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
+                                            <?php
+                                                while($row=mysqli_fetch_array($result)){
+                                                    ?>
                                             <tbody>
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>Vayu Darji</td>
-                                                    <td>PIET22CS111</td>
-                                                    <td>9998887776</td>
-                                                    <td>100</td>
-                                                    <td>Single Seater</td>
-                                                    <td>1-1-2023</td>
+                                                    <td><?php echo $row['id']; ?></td>
+                                                    <td><?php echo $row['firstname'] ,' ', $row['lastname']; ?></td>
+                                                    <td><?php echo $row['registration']; ?></td>
+                                                    <td><?php echo $row['contactno']; ?></td>
+                                                    <td><?php echo $row['roomno']; ?></td>
+                                                    <td><?php echo $row['seaterr']; ?> Seater</td>
+                                                    <td><?php echo $row['date']; ?></td>
                                                     <td><a href="" ><i class='bx bxs-edit-alt'></i></a></td>
                                                 </tr>
                                             </tbody>
+                                            <?php } ?>
                                         </table>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>

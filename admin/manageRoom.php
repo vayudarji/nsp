@@ -1,3 +1,12 @@
+<?php
+    require '../config.php';
+    $query="SELECT * from add_room ";
+    $result=mysqli_query($conn,$query); 
+    if(mysqli_num_rows($result)> 0){
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,17 +100,24 @@
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
+                                        <?php while($row=mysqli_fetch_array($result)){
+
+                                         ?>
                                             <tbody>
                                                 <tr>
-                                                    <td>1</td>
-                                                    <td>Single Seater</td>
-                                                    <td>100</td>
-                                                    <td>90000 Rs</td>
-                                                    <td>1-1-2023</td>
+                                                    <td><?php echo $row['id']; ?></td>
+                                                    <td><?php echo $row['seater']; ?> Seater</td>
+                                                    <td><?php echo $row['roomno']; ?></td>
+                                                    <td><?php echo $row['fees']; ?> Rs</td>
+                                                    <td><?php echo $row['postdate']; ?></td>
                                                     <td><a href="" ><i class='bx bxs-edit-alt'></i></a></td>
                                                 </tr>
                                             </tbody>
+                                            <?php } ?>
+
                                         </table>
+                                        <?php } ?> 
+
                                     </div>
                                 </div>
                             </div>

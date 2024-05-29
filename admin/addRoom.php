@@ -1,3 +1,20 @@
+<?php
+    require '../config.php';
+    if(isset($_POST['submit'])){
+        $seater=$_POST['seater'];
+        $roomno=$_POST['roomno'];
+        $fees=$_POST['fee'];
+
+        $query="INSERT into add_room(seater,roomno,fees,postdate) values('$seater','$roomno','$fees',curdate())";
+        $result=mysqli_query($conn,$query);
+        echo"<script> alert('Room Added'); </script>";
+    }
+    else{
+        echo "error aa gya";
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,10 +97,10 @@
                                 <div class="panel panel-primary" style="color: #19234d;">
                                     <div class="panel-heading">Fill all</div>
                                     <div class="panel-body">
-                                        <form action="" class="horizontal" id="myForm">
+                                        <form action="" class="horizontal" id="myForm" method="post">
 
                                             <div class="form-group">
-                                                <label class="col-sm-2 control-label" for="seater">Select Seater</label>
+                                                <label class="col-sm-2 control-label" for="seater" >Select Seater</label>
                                                 <div class="col-sm-9">
                                                     <select name="seater" class="form-control" id="seater" required="required">
                                                         <option value="">Select Seater</option>
@@ -99,7 +116,7 @@
                                             <div class="form-group">
                                                 <label for="rmno" class="col-sm-2 control-label">Room No </label>
                                                 <div class="col-sm-9">
-                                                    <input type="number" name="rmno" id="rmno" class="form-control">
+                                                    <input type="number" name="roomno" id="roomno" class="form-control">
                                                 </div>
                                             </div>
 
@@ -113,7 +130,8 @@
                                             <div class="col-sm-6 col-sm-offset-2">
                                                 <div class="submit">
                                                     <!-- <button type="submit" name="submit" id="submit" value="Submit" class="btn btn-primary">create</button> -->
-                                                    <input type="submit" name="submit" id="submit" Value="Submit" class="btn btn-primary">
+                                                    
+                                                    <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit</button>
                                                 </div>
                                                 </div>
                                         </form>

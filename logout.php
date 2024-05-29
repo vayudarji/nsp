@@ -2,7 +2,6 @@
 	require 'config.php';
 
 	if (isset($_POST["submit"])) {
-		echo"heloooooooooooooooooooooooooo";
 		$user_email = $_POST["reg_email"];
 		$user_pass = $_POST["reg_pass"];
 		echo"$user_pass";
